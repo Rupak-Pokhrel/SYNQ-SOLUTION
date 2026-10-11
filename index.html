@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SYNQ – Interactive Safety Training for the Real World</title>
+<link rel="icon" href="assets/images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4z"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+  <symbol id="term" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 10l4 3-4 3M12 16h6"/></symbol>
+  <symbol id="grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.5 9 2.5 12 0v-5.5"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 8l-2 6-6 2 2-6z"/></symbol>
+  <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></symbol>
+  <symbol id="chart" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17v-5M12 17V8M16 17v-3"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><circle cx="12" cy="11" r="3"/><path d="M12 9.5V11l1 1"/></symbol>
+  <symbol id="alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></symbol>
+  <symbol id="flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-3-2-5-3-7-1 2-2 3-3 3 0-4-2-7-5-9 0 5-3 7-3 12 0 4 3 8 7 8z"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="touch" viewBox="0 0 24 24"><path d="M9 11V5a2 2 0 0 1 4 0v6l3 .5a2 2 0 0 1 1.7 2L17 18c-.3 2-2 3-4 3h-1c-2 0-3-1-4-2.5L5 15a1.5 1.5 0 0 1 2.3-1.7L9 15"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="gauge" viewBox="0 0 24 24"><path d="M3 18a9 9 0 1 1 18 0"/><path d="M12 18l4-6"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-9M15 6h6v6"/></symbol>
+  <symbol id="badge" viewBox="0 0 24 24"><path d="M12 2l2.5 2 3.2-.3.9 3.1 2.8 1.6-1.2 3 1.2 3-2.8 1.6-.9 3.1-3.2-.3L12 22l-2.5-2-3.2.3-.9-3.1L2.6 15.6l1.2-3-1.2-3 2.8-1.6.9-3.1 3.2.3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="wave" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 5c2 1 3 3 2 5M20 3c3 2 4 6 2 9"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="SYNQ home"><img src="assets/images/logo.jpg" alt="SYNQ logo"><b>SYNQ</b><i></i></a>
+    <nav class="menu" id="menu" aria-label="Primary">
+      <a href="#home" data-s="home" class="on">Home</a>
+      <a href="#product" data-s="product">Product</a>
+      <a href="#how" data-s="how">How it works</a>
+      <a href="#features" data-s="features">Features</a>
+      <a href="#about" data-s="about">About</a>
+    </nav>
+    <div class="nav-r">
+      <span class="status"><i class="dot"></i>Status: System Ready</span>
+      <button class="btn red sm" data-demo>Request Demo</button>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section id="home" class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="pill"><i class="dot"></i>Next-Gen Safety Telemetry</span>
+      <span class="latency"><svg class="i"><use href="#wifi"/></svg>Realtime Latency: 12ms</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Learn. Test. Improve.</p>
+        <h1>Interactive safety training for the <em>real world.</em></h1>
+        <p class="lead">Build instinctive safety reflexes with immersive 3D simulation.</p>
+        <div class="btns">
+          <a class="btn red" href="https://hazard-sense-two.vercel.app/" target="_blank" rel="noopener">Explore hazard perception <svg class="i"><use href="#arrow"/></svg></a>
+          <button class="btn grey" data-demo><svg class="i"><use href="#video"/></svg>Request a demo</button>
+        </div>
+      </div>
+      <figure class="shot" style="margin:0">
+        <img src="assets/images/hero.jpg" alt="Forklift approaching in a high-bay warehouse inside the SYNQ simulator">
+        <div class="bar">PPE Status: <b>Ready</b> &nbsp; [Helmet: <b>OK</b> | Vest: <b>OK</b> | Steel toe: <b>OK</b>]</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Scenario catalog -->
+<section class="sec" id="scenarios">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Mission-critical scenario catalog</div>
+        <h2>Select live hazard scenario</h2>
+      </div>
+      <p>High-frequency industrial failure scenarios with live physics inspection.</p>
+    </div>
+    <div class="cards4">
+      <a class="card" target="_blank" rel="noopener">
+        <img src="assets/images/sc1.jpg" alt="Forklift crossway zone scenario">
+        <div class="row"><span>Module 01</span></div>
+        <h3>Forklift crossway zone</h3><p>Blind corner maneuvers &amp; vehicle right-of-way.</p>
+      </a>
+      <a class="card" target="_blank" rel="noopener">
+        <img src="assets/images/sc2.jpg" alt="High-bay stacking scenario">
+        <div class="row"><span>Module 02</span></div>
+        <h3>High-bay stacking</h3><p>Unstable pallets &amp; falling hazard identification.</p>
+      </a>
+      <a class="card" target="_blank" rel="noopener">
+        <img src="assets/images/sc3.jpg" alt="Wet floor and chemical spills scenario">
+        <div class="row"><span>Module 03</span></div>
+        <h3>Wet floor &amp; chemical spills</h3><p>Low-visibility slick zones &amp; chemical SDS protocol.</p>
+      </a>
+      <a class="card" target="_blank" rel="noopener">
+        <img src="assets/images/sc4.jpg" alt="Fire and emergency egress scenario">
+        <div class="row"><span>Module 04</span></div>
+        <h3>Fire &amp; emergency egress</h3><p>Egress pathways &amp; rapid emergency evacuation.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section id="product" class="prod">
+  <div class="wrap prod-grid">
+    <div>
+      <div class="badges"><span class="badge r">Flagship platform</span><span class="badge">Enterprise safety 3D sim</span></div>
+      <h1>Hazard perception <span>3D engine</span></h1>
+      <p class="lead" style="margin-bottom:0">Bridge classroom theory with real-world warehouse simulation.</p>
+      <div class="stats">
+        <div class="stat"><small>Reaction velocity</small><b style="color:var(--green)">0.42s</b><span>Benchmark Target</span></div>
+        <div class="stat"><small>Accident reduction</small><b style="color:var(--peach)">68.4%</b><span>Avg Floor Incident Drop</span></div>
+        <div class="stat"><small>Spatial field of view</small><b>360°</b><span>Continuous Tracking</span></div>
+      </div>
+      <div class="btns">
+        <a class="btn red sm" style="height:44px" href="https://hazard-sense-two.vercel.app/" target="_blank" rel="noopener"><svg class="i"><use href="#play"/></svg>Launch live simulation demo</a>
+        <a class="btn grey sm" style="height:44px" href="#pipeline"><svg class="i"><use href="#term"/></svg>Explore 4-stage model</a>
+      </div>
+    </div>
+    <figure class="shot" style="margin:0"><img src="assets/images/product.jpg" alt="Hazard Perception 3D simulator with detected hazards and PPE checks"></figure>
+  </div>
+</section>
+
+<!-- 4-stage pipeline -->
+<section class="sec" id="pipeline">
+  <div class="wrap center">
+    <div class="eyebrow">Pedagogical framework</div>
+    <h2 style="margin-top:14px">The 4-stage cognitive hazard pipeline</h2>
+    <p class="sub">SYNQ’s progressive stress-conditioning cycle transforms raw workplace safety compliance from static classroom checklists into fast, reflexive operational muscle memory.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="cycle">
+  <div class="wrap">
+    <div class="cycle-head">
+      <h2 class="cond">Cognitive training cycle pipeline</h2>
+      <div class="tabs" role="tablist" aria-label="Training stages">
+        <button role="tab" aria-selected="true" data-t="0">01 // Train</button>
+        <button role="tab" aria-selected="false" data-t="1">02 // Practise</button>
+        <button role="tab" aria-selected="false" data-t="2">03 // Test</button>
+        <button role="tab" aria-selected="false" data-t="3">04 // Improve</button>
+      </div>
+    </div>
+    <div class="cyc" id="cyc">
+      <article class="cy on" style="--c:var(--green)">
+        <div class="n"><b>01</b><span class="tag">Guided onboard</span></div>
+        <h3>Train</h3><img src="assets/images/pl1.jpg" alt="Virtual supervisor guiding a trainee">
+        <ul>
+          <li><svg class="i"><use href="#check"/></svg>High-risk corridor route mapping</li>
+          <li><svg class="i"><use href="#check"/></svg>Forklift clearance &amp; blindspot drills</li>
+          <li><svg class="i"><use href="#check"/></svg>Dynamic PPE compliance scan</li>
+        </ul>
+      </article>
+      <article class="cy" style="--c:var(--lav)">
+        <div class="n"><b>02</b><span class="tag">Sandbox fluid</span></div>
+        <h3>Practise</h3><img src="assets/images/pl2.jpg" alt="First-person forklift navigation">
+        <ul>
+          <li><svg class="i"><use href="#touch"/></svg>Pre-operational forklift inspection</li>
+          <li><svg class="i"><use href="#touch"/></svg>Spill identification walkthrough</li>
+          <li><svg class="i"><use href="#touch"/></svg>Loading dock edge proximity bounds</li>
+        </ul>
+      </article>
+      <article class="cy" style="--c:var(--red)">
+        <div class="n"><b style="color:var(--peach)">03</b><span class="tag" style="background:#4a2420;color:var(--peach)">Evaluation</span></div>
+        <h3>Test</h3><img src="assets/images/pl3.jpg" alt="Timed hazard test with a collapsing pallet">
+        <ul style="--c:var(--peach)">
+          <li><svg class="i"><use href="#eye"/></svg>Millisecond gaze fixation tracking</li>
+          <li><svg class="i"><use href="#gauge"/></svg>Zero-hint cognitive reaction trials</li>
+          <li><svg class="i"><use href="#alert"/></svg>Real-time penalty scoring triggers</li>
+        </ul>
+      </article>
+      <article class="cy" style="--c:#2fd18c">
+        <div class="n"><b style="color:var(--green)">04</b><span class="tag">Analytics</span></div>
+        <h3>Improve</h3><img src="assets/images/pl4.jpg" alt="Predictive audit analytics dashboard">
+        <ul>
+          <li><svg class="i"><use href="#chart"/></svg>Worker sensory blindspot mapping</li>
+          <li><svg class="i"><use href="#check"/></svg>Adaptive remediation assignments</li>
+          <li><svg class="i"><use href="#shield"/></svg>Permanent OSHA audit record logs</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES: three phases -->
+<section id="features" class="phases">
+  <div class="wrap">
+    <div class="eyebrow">Progression pathway</div>
+    <h2>Three progressive safety phases</h2>
+    <p class="intro">Difficulty increases as the player moves from personal equipment to environmental awareness and emergency response.</p>
+    <div class="p3">
+      <article class="ph">
+        <div class="top"><div class="tags"><span>Phase 01</span></div><svg class="i ic"><use href="#shield"/></svg></div>
+        <h3>Self Equipment</h3>
+        <p>Learn the 7 PPE items and when to wear them.</p>
+        <div class="diff"><span>Difficulty</span><span class="g">Introductory</span></div>
+      </article>
+      <article class="ph">
+        <div class="top"><div class="tags"><span>Phase 02</span></div><svg class="i ic"><use href="#alert"/></svg></div>
+        <h3>Environmental Knowledge</h3>
+        <p>Spot and report five hazard areas around you.</p>
+        <div class="diff"><span>Difficulty</span><span class="p">Moderate</span></div>
+      </article>
+      <article class="ph final">
+        <div class="top"><div class="tags"><span>Phase 03</span><span class="r">Final</span></div><svg class="i ic"><use href="#flame"/></svg></div>
+        <h3>Emergency Consciousness</h3>
+        <p>Respond to electrical and fire emergencies and evacuate safely.</p>
+        <div class="diff"><span>Difficulty &amp; evaluation</span><span class="a">Integrated mastery</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="l">
+        <span class="pill" style="background:transparent;padding:0;color:var(--peach)"><i class="dot" style="background:var(--peach)"></i>Enterprise rollout ready</span>
+        <h2>Deploy hazard perception to your fleet</h2>
+        <p>Equip your safety officers with continuous 3D telemetry and transform reactive compliance training into an unshakeable culture of prevention.</p>
+      </div>
+      <div class="r">
+        <button class="btn grey" data-demo>Request simulation demo</button>
+        <a class="btn red" href="https://hazard-sense-two.vercel.app/" target="_blank" rel="noopener">Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / TEAM -->
+<section id="about" class="team">
+  <div class="wrap">
+    <div class="team-head">
+      <div>
+        <div class="eyebrow"><i class="dot"></i>Personnel telemetry matrix</div>
+        <h2>Core architecture &amp; project leadership</h2>
+        <p>Cross disciplinary engineers, simulation architects, and safety communication specialists driving zero-harm readiness across modern logistics footprints.</p>
+      </div>
+      <span class="unit">Unit status: Deployed &amp; active</span>
+    </div>
+    <div class="tm">
+      <article class="m c-r">
+        <div class="h"><span class="d">Leadership // Core architecture</span><span class="ok"><i class="dot"></i>SYS.READY</span></div>
+        <div class="who"><div class="av">BP</div><div><h3>Bishwa Prasad Kafle</h3><div class="role" style="color:var(--red)">Project Manager <small>· Systems Engineer</small></div></div></div>
+        <p>Directing platform lifecycle, enterprise systems engineering, WebGL simulation architecture, and ISO 45001 compliance standards. Synchronizing computational simulation with operational plant constraints.</p>
+        <div class="chips"><span>Architecture &amp; systems</span><span>Scope &amp; milestone governance</span><span>Telemetry pipeline</span></div>
+        <div class="mt"><span>Operational milestone integrity</span><span>99.4% verified</span></div>
+      </article>
+      <article class="m c-l">
+        <div class="h"><span class="d">Operations // UX &amp; safety comms</span><span class="ok"><i class="dot"></i>SYS.READY</span></div>
+        <div class="who"><div class="av">RP</div><div><h3>Rupak Pokhrel</h3><div class="role" style="color:var(--peach)">Deputy Project Manager <small>· Interface &amp; Safety Communication</small></div></div></div>
+        <p>Spearheading operational execution, intuitive operator interfaces, ergonomic safety communication protocols, and interactive feedback loops to eliminate reaction lag during critical plant incidents.</p>
+        <div class="chips"><span>UI/UX safety systems</span><span>Field comms</span><span>Cross-team operations</span></div>
+        <div class="mt"><span>Interface cognitive friction</span><span>Minimal (&lt; 0.12s)</span></div>
+      </article>
+      <article class="m c-g">
+        <div class="h"><span class="d">Simulation engine // Environment</span><span class="ok"><i class="dot"></i>SYS.READY</span></div>
+        <div class="who"><div class="av">BP</div><div><h3>Bibek Poudel</h3><div class="role" style="color:var(--peach)">Scene Builder <small>· 3D Environment &amp; Spatial Simulation</small></div></div></div>
+        <p>Constructing high-bay warehouse environment reconstructions, dynamic asset spatial physics, lighting pipelines, and hazard vector rendering for true-to-scale physical collision authenticity.</p>
+        <div class="chips"><span>3D world geometry</span><span>Physics meshes</span><span>Dynamic obstacle injection</span></div>
+        <div class="mt"><span>Spatial collision mesh fidelity</span><span>Sub-millimeter</span></div>
+      </article>
+      <article class="m c-p">
+        <div class="h"><span class="d">Assurance &amp; multimodal // Audio &amp; QA</span><span class="ok"><i class="dot"></i>SYS.READY</span></div>
+        <div class="who"><div class="av">AR</div><div><h3>Alson Rana</h3><div class="role" style="color:var(--peach)">Content, Audio, QA &amp; Documentation <small>· Simulation Quality &amp; Specs</small></div></div></div>
+        <p>Synthesizing acoustic spatial cues, industrial audio designs, exhaustive scenario test verifications, QA stress-testing regimes, and rigorous compliance documentation for enterprise safety certification.</p>
+        <div class="chips"><span>Spatial audio</span><span>Scenario validation</span><span>Technical documentation</span></div>
+        <div class="mt"><span>QA test scenario coverage</span><span>100% verified</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#home"><img src="assets/images/logo.jpg" alt="SYNQ logo"><b>SYNQ</b></a>
+        <div class="tag">Learn. Test. Improve.</div>
+        <p>Next-generation enterprise 3D simulation telemetry and real-time hazard perception systems calibrated for ultra-high safety compliance.</p>
+        <div class="iso"><svg class="i" style="font-size:20px"><use href="#badge"/></svg>ISO 45001 CERTIFIED</div>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul><li>3D Simulator</a></li><li>Hazard Engine</a></li></ul>
+      </div>
+      <div>
+        <h4>Enterprise</h4>
+        <ul><li>About SYNQ</a></li><li>Safety Operations</a></li><li>Industrial Case Studies</a></li><li>Leadership</a></li></ul>
+      </div>
+      <div>
+        <h4>Safety Intelligence Dispatch</h4>
+        <p>Subscribe for mission-critical hazard mitigation protocols, simulation research, and OSHA/ISO compliance whitepapers.</p>
+        <form class="sub-form" id="sub" novalidate>
+          <input type="email" id="subEmail" placeholder="Enter enterprise email" aria-label="Enterprise email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="msg" id="subMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 SYNQ Global Simulation Systems Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog id="demo">
+  <form method="dialog" id="demoForm">
+    <h3>Request a demo</h3>
+    <p>Tell us where to reach you and we’ll set up a walkthrough of the simulator.</p>
+    <label for="dn">Name</label><input id="dn" autocomplete="name" required>
+    <label for="de">Work email</label><input id="de" type="email" autocomplete="email" required>
+    <p class="msg" id="demoMsg" role="status"></p>
+    <div class="acts">
+      <button class="btn grey sm" value="cancel" formnovalidate>Close</button>
+      <button class="btn red sm" id="demoSend" type="button">Send request</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
