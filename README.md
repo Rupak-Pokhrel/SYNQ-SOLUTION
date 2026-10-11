@@ -16,7 +16,4 @@ Static website (no build step). Open `index.html` in a browser, or serve the fol
     │   └── images/         # logo, hero, product, scenario (sc1-4), pipeline (pl1-4)
     └── README.md
 
-## Notes
-- Game link: https://hazard-sense-two.vercel.app/
-- Fonts (Barlow Condensed, Space Grotesk) load from Google Fonts.
-- The demo and newsletter forms are front-end only; connect them to a backend before production.
+
